@@ -1,2 +1,2 @@
 # sample-electron-nodejs-trash-chat-client
-Description is in repository name
+To run this program you need hands and some honor
