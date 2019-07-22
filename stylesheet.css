@@ -189,6 +189,8 @@ friendContainer highlightung implementation
 
     font-size: 1em;
     color: white;
+    
+    resize: none;
 }
 
 #msgTextArea::selection {
