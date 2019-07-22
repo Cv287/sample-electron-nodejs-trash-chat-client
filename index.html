@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Sample_chat</title>
+        <link href="stylesheet.css" rel="stylesheet">
+        <script>window.$ = window.jQuery = require('jquery');</script>
+    </head>
+    <body>
+
+
+        <div id="leftSide">
+            <div id="friendListContainer">
+
+                <div class="friendContainer"><img src="images/red.jpg"> <span>Nick_name_1</span></div>
+                <div class="friendContainer"><img src="images/wallpaper.jpg"> <span>Nick_name_2</span></div>
+                <div class="friendContainer"><img src="images/red.jpg"> <span>Nick_name_1</span></div>
+                <div class="friendContainer"><img src="images/wallpaper.jpg"> <span>Nick_name_2</span></div>
+                <div class="friendContainer"><img src="images/red.jpg"> <span>Nick_name_1</span></div>
+                <div class="friendContainer"><img src="images/wallpaper.jpg"> <span>Nick_name_2</span></div>
+                <div class="friendContainer"><img src="images/red.jpg"> <span>Nick_name_1</span></div>
+                <div class="friendContainer"><img src="images/wallpaper.jpg"> <span>Nick_name_2</span></div>
+                <div class="friendContainer"><img src="images/red.jpg"> <span>Nick_name_1</span></div>
+                <div class="friendContainer"><img src="images/red.jpg"> <span>Nick_name_1</span></div>
+                <div class="friendContainer"><img src="images/wallpaper.jpg"> <span>Nick_name_2</span></div>
+                <div class="friendContainer"><img src="images/red.jpg"> <span>Nick_name_1</span></div>
+                <div class="friendContainer"><img src="images/wallpaper.jpg"> <span>Nick_name_2</span></div>
+                <div class="friendContainer"><img src="images/red.jpg"> <span>Nick_name_1</span></div>
+                <div class="friendContainer"><img src="images/wallpaper.jpg"> <span>Nick_name_2</span></div>
+                <div class="friendContainer"><img src="images/red.jpg"> <span>Nick_name_1</span></div>
+                <div class="friendContainer"><img src="images/wallpaper.jpg"> <span>Nick_name_2</span></div>
+                <div class="friendContainer"><img src="images/red.jpg"> <span>Nick_name_1</span></div>
+
+            </div>
+
+            <div id="toolBox"></div>
+        </div>
+
+
+        <div id="rightSide">
+            <div class="selectedFriendBar">
+                <img src="images/red.jpg">
+                <span>Nick_name_1</span>
+            </div>
+
+            <div id="messageListContainer">
+                <div class="userBlock">
+
+                    <div class="chatLeftSide">
+                        <span class="senderUsername">John_Darkman</span> :
+                    </div> 
+
+                    <div class="chatRightSide">
+                        <span class="messageContent">Oh, hi mark!</span>
+                        <span class="messageContent">How is your sex life?</span>
+                        <span class="messageContent">Maaammmmmmmaaaa life had just begun, didn't mean to make you cry,
+                                                     body's aching all the time! Mammmmmaaaaaaa take me hoooome, coooountry roads
+                        </span>
+                        <span class="messageContent">
+                            <a href="images/wallpaper.jpg"> <img src="images/wallpaper.jpg"> </a>
+                        </span>
+                    </div>
+
+                </div>
+
+                 <div class="userBlock">
+                    <div class="chatLeftSide">
+                        <span class="senderUsername">Cv287</span> :
+                    </div> 
+                    
+                    <div class="chatRightSide">
+                        <span class="messageContent">Hello</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="inputContainer">
+                <form id="inputForm" onsubmit="return false;">
+                    <textarea id="msgTextArea" rows="2" cols="10" autofocus placeholder="Message..."></textarea>
+                </form>
+            </div>
+
+        </div>
+
+        
+        <script>
+            $('.friendContainer').click(function () {
+                $('.friendContainerSelected').removeClass('friendContainerSelected');
+                $(this).toggleClass('friendContainerSelected');
+
+
+                $('img.selectedFriendBar').attr(
+                    'src',
+                    $('.selectedFriendBar').attr('src')
+                );
+                $('.selectedFriendBar').text($('.friendContainerSelected').text());
+
+               // $('.selectedFriendBar') $('.friendContainerSelected').text();
+            });
+
+            $('.friendContainer').mouseenter(function() {
+                $('.friendContainerOnFocus').removeClass('friendContainerOnFocus');
+                $(this).toggleClass('friendContainerOnFocus');
+            });
+        </script>
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+    </body>
+</html>

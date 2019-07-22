@@ -1,0 +1,286 @@
+html {
+    min-width: 600px;
+    height: 100%;
+}
+
+body {
+    font-family: sans-serif, 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+    color: white;
+    min-width: 600px;
+    height: 100%;
+    margin: 0 0 0 0;
+    user-select: none;
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        font-size: 0.8em;
+        
+    }
+
+    #friendListContainer img {
+        width: 2.4em;
+        height: 2.4em;
+    }
+
+    #selectedFriendBar img {
+        width: 2.4em;
+        height: 2.4em;
+    }
+}
+
+
+#rightSide {
+    background-color: rgb(27, 27, 27);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 75%;
+
+/*  Fix the page's reaction to jQuery 
+friendContainer highlightung implementation  
+    position: relative; 
+    bottom: 2.93%;*/
+}
+
+/*
+ *      top nickname and avatar
+ */
+
+.selectedFriendBar {
+    background-color: #272727;
+    height: 10%;
+    width: 100%;
+    border-bottom: #626262 0.08em solid;
+    border-left: #626262 0.08em solid;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.selectedFriendBar img {
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 10px;
+}
+
+.selectedFriendBar span {
+    position: relative;
+    left: 0.5%; 
+}
+
+/*
+ *      message stack
+ */
+
+#messageListContainer {
+    background-color: #272727;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80%;
+    border-left: #626262 0.08em solid;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    overflow-x: visible;
+
+    user-select: text;
+}
+
+.userBlock {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-right: 2%;
+}
+
+.chatLeftSide {
+    width: 25%;
+    margin-top: 1%;
+    text-align: right;
+    user-select: none;
+}
+
+.senderUsername {
+    background-color: #0f0f0f;
+    color: white;
+    padding: 0.4em;
+    
+    box-sizing: border-box;
+    border-radius: 10px;
+    height: fit-content;
+
+    user-select: none;
+}
+
+.chatRightSide {
+    width: 73%;
+    height: auto;
+    color: black; /* stands here for ':' */
+    display: flex;
+    flex: 1 1 1;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    position: relative;
+    left: 3%;
+}
+
+.messageContent {
+    background-color: white;
+    color: #212121;
+    width: fit-content;
+    height: 100%;
+    border-radius: 10px;
+    padding: 0.1em 0.1em 0.1em 0.1em;
+    margin: 1% 4% 1% 0;
+}
+
+.messageContent::selection {
+    background-color: transparent;
+    color: goldenrod;
+}
+
+.messageContent img {
+    border-radius: 10px;
+    width: 20em;
+    height: 14em;
+    padding: 0;
+    vertical-align: bottom;
+}
+
+.messageContent img::selection {
+    border-radius: 50%;
+    color: goldenrod;
+}
+
+/*
+ *      input container
+ */
+
+#inputContainer {
+    background-color: #272727;
+    width: 100%;
+    height: 10%;
+  /*  border-top: #676767 0.08em solid; */
+    border-left: #676767 0.08em solid;
+    box-sizing: border-box;
+    display: block;
+}
+
+#msgTextArea {
+    background-color: #222;
+    box-sizing: border-box;
+    padding: 0.5em;
+    border: none;
+    border-radius: 10px;
+    width: 82%;
+    margin-top: 1.5%;
+
+    position: relative;
+    left: 15%;
+    bottom: 2%;
+
+    font-size: 1em;
+    color: white;
+}
+
+#msgTextArea::selection {
+    background-color: transparent;
+    color: goldenrod;
+}
+
+#msgTextArea:hover {
+    border: white 1px solid;
+}
+
+#msgTextArea:focus {
+    outline: none;
+}
+
+#msgTextArea::placeholder {
+    color: white;
+    font-size: 1.1em;
+}
+
+
+
+#leftSide {
+    background-color: #272727;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    width: 25%;
+    height: 100%;
+    flex-wrap: nowrap; 
+}
+
+/*
+ *      friend list
+ */
+
+#friendListContainer {
+    background-color: #272727;
+    width: 100%;
+    height: 90%;
+    overflow-y: scroll
+}
+
+.friendContainer {
+    background-color: #272727;
+    width: 100%;
+    height: 11.2%;
+    border-bottom: #626262 0.08em solid;
+    box-sizing: border-box;
+}
+
+.friendContainer img {
+    position: relative;
+    top: 18%;
+    left: 5%;
+
+    width: 14%;
+    height: 65%;
+    border-radius: 10px;
+}
+
+.friendContainer span {
+    position: relative;
+    left: 6%;
+}
+
+.friendContainerOnFocus {
+    background-color: #424242;
+    color: rgb(21, 21, 21);
+    width: 100%;
+    height: 11.2%;
+    border-bottom: #626262 0.08em solid;
+    box-sizing: border-box;
+}
+
+.friendContainerSelected {
+    background-color: #626262;
+    color: rgb(21, 21, 21);
+    width: 100%;
+    height: 11.2%;
+    border-bottom: #626262 0.08em solid;
+    box-sizing: border-box;
+}
+
+/*
+ *      toolbox 
+ */
+
+#toolBox {
+    background-color: #222222;
+    width: 100%;
+    height: 10%;
+    border-top: #626262 0.08em solid;
+    box-sizing: border-box;
+}
